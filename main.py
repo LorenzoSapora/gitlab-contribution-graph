@@ -6,9 +6,6 @@ from datetime import datetime, timedelta
 now = datetime.now()
 
 for d in reversed(range(365)):
-    AFTER = (d + 1)
-    CURRENT = d
-    BEFORE = (d - 1)
     date_after = (now - timedelta(days=(d + 1))).strftime("%Y-%m-%d")
     date_current = (now - timedelta(days=d)).strftime("%Y-%m-%d")
     date_before = (now - timedelta(days=(d - 1))).strftime("%Y-%m-%d")
