@@ -14,16 +14,9 @@ for d in reversed(range(365)):
     date_current = (now - timedelta(days=d)).strftime("%Y-%m-%d")
     date_before = (now - timedelta(days=(d - 1))).strftime("%Y-%m-%d")
 
+    headers = {'PRIVATE-TOKEN': config.privatetoken}
 
-    headers = {
-        'PRIVATE-TOKEN': config.privatetoken,
-    }
-
-    params = (
-        ('before',date_before),
-        ('after',date_after),
-        ('per_page', '99'),
-    )
+    params = (('before',date_before),('after',date_after),('per_page', '99'))
 
     response = requests.get(config.gitlaburl,headers=headers,params=params)
 
