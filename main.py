@@ -22,3 +22,7 @@ for d in reversed(range(365)):
     )
 
     response = requests.get(config.gitlaburl,headers=headers,params=params)
+
+    result = response.json()
+
+    print(len(result))
