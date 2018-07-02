@@ -4,6 +4,10 @@ import json
 from datetime import datetime, timedelta
 
 now = datetime.now()
+output = 'data.csv'
+open(output, 'w')
+fcsv = open(output, 'a+')
+print >> fcsv, "date,events"
 
 for d in reversed(range(365)):
     date_after = (now - timedelta(days=(d + 1))).strftime("%Y-%m-%d")
